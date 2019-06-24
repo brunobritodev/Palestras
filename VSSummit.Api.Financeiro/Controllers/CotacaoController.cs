@@ -1,8 +1,8 @@
-﻿using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using System.Linq;
+using System.Threading.Tasks;
 using VSSummit.Api.Financeiro.ViewModel;
 
 namespace VSSummit.Api.Financeiro.Controllers
@@ -33,12 +33,13 @@ namespace VSSummit.Api.Financeiro.Controllers
             return Ok(moedas);
         }
 
+
         [HttpPut, Route("atualizar-cripto-moeda"), Authorize(Policy = "Escrita")]
         public IActionResult AtualizarCriptoMoedas()
         {
             return Ok(new
             {
-                Moeda ="BTC",
+                Moeda = "BTC",
                 NovoValor = 9700,
                 Sucesso = true
             });

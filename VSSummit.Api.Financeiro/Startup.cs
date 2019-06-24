@@ -50,7 +50,7 @@ namespace VSSummit.Api.Financeiro
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseCors("Devlopment");
             app.UseAuthentication();
             app.UseMvc();
         }

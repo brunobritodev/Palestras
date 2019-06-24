@@ -3,7 +3,7 @@ import { environment } from '../../../environments/environment';
 
 export const authModuleConfig: OAuthModuleConfig = {
     resourceServer: {
-        allowedUrls: [environment.API_URL],
+        allowedUrls: [environment.ResourceServer],
         sendAccessToken: true
     }
 };

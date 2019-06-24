@@ -12,6 +12,8 @@ export class CotacaoService {
 
     private defaultHeader: HttpHeaders;
     constructor(private http: HttpClient, private oauth: OAuthService) {
+        this.defaultHeader = new HttpHeaders().set('Accept', 'application/json').set('Authorization', 'Bearer ' + this.oauth.getAccessToken());
+
     }
 
     public obterCotacoes(): Observable<Moedas[]> {
