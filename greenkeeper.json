@@ -1,0 +1,9 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "VSSummit-2019/AngularOIDC/package.json"
+      ]
+    }
+  }
+}
