@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using IdentityModel.Client;
 using Newtonsoft.Json.Linq;
 
-namespace ClientCredentials.Financeiro.AcessoTotal
+namespace BackgroundService.Client
 {
     class Program
     {

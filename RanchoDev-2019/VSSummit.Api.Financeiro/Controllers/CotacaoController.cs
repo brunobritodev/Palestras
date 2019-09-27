@@ -1,11 +1,11 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using System.Linq;
-using System.Threading.Tasks;
-using VSSummit.Api.Financeiro.ViewModel;
+using RanchoDev.Api.Financeiro.ViewModel;
 
-namespace VSSummit.Api.Financeiro.Controllers
+namespace RanchoDev.Api.Financeiro.Controllers
 {
     [Authorize, Route("[controller]")]
     public class CotacaoController : ControllerBase

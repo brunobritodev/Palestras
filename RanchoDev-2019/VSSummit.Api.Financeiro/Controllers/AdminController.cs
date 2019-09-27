@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace VSSummit.Api.Financeiro.Controllers
+namespace RanchoDev.Api.Financeiro.Controllers
 {
     [Route("[controller]")]
     [Authorize, Authorize(Policy = "Escrita")]

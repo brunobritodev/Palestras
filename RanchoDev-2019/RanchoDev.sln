@@ -7,13 +7,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clients", "Clients", "{2078
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{E2DA8EDC-0533-40FD-9CCA-3139024CC7D5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VSSummit.Api.Financeiro", "VSSummit.Api.Financeiro\VSSummit.Api.Financeiro.csproj", "{DCB49FB4-ECA0-40C4-8A14-F8F9BB3AA3DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RanchoDev.Api.Financeiro", "VSSummit.Api.Financeiro\RanchoDev.Api.Financeiro.csproj", "{DCB49FB4-ECA0-40C4-8A14-F8F9BB3AA3DA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ClientCredentials", "ClientCredentials", "{1A7B36AA-D470-42C9-9585-D6B359439947}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Password", "Password", "{6523DA08-C493-4BD3-951D-65FDFAE990AE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientCredentials.Financeiro.AcessoTotal", "ClientCredentials.Financeiro.AcessoTotal\ClientCredentials.Financeiro.AcessoTotal.csproj", "{18DF6D37-67AA-4E4D-895B-4D9087323514}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackgroundService.Client", "ClientCredentials.Financeiro.AcessoTotal\BackgroundService.Client.csproj", "{18DF6D37-67AA-4E4D-895B-4D9087323514}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientPassword.Financeiro", "ClientPassword.Financeiro\ClientPassword.Financeiro.csproj", "{4A39FD74-DF33-4D92-832A-FA20A6D60CC6}"
 EndProject

@@ -2,9 +2,9 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using VSSummit.Api.Financeiro.Configurations;
+using RanchoDev.Api.Financeiro.Configurations;
 
-namespace VSSummit.Api.Financeiro
+namespace RanchoDev.Api.Financeiro
 {
     public class Startup
     {
