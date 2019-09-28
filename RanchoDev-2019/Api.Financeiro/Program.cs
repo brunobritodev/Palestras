@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 
-namespace RanchoDev.Api.Financeiro
+namespace Api.Financeiro
 {
     public class Program
     {

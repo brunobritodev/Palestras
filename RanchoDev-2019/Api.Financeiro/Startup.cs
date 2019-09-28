@@ -1,10 +1,10 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using Api.Financeiro.Configurations;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using RanchoDev.Api.Financeiro.Configurations;
 
-namespace RanchoDev.Api.Financeiro
+namespace Api.Financeiro
 {
     public class Startup
     {
@@ -20,24 +20,24 @@ namespace RanchoDev.Api.Financeiro
         {
             services.AddCors(options =>
             {
-                options.AddPolicy("Devlopment",
+                options.AddPolicy("Development",
                     builder => builder.AllowAnyOrigin()
                         .AllowAnyMethod()
                         .AllowAnyHeader()
                         .AllowCredentials());
             });
 
-            services.AddMvcCore()
-                .AddAuthorization()
-                .AddJsonFormatters();
+            services.AddMvc();
+            services.AddAuthorization();
 
+            services.AddSwagger(Configuration);
             services.AddAuthentication("Bearer")
                 .AddIdentityServerAuthentication(options =>
                 {
-                    options.Authority = "http://localhost:5000";
+                    options.Authority = Configuration["ApplicationSettings:Authority"]; ;
                     options.RequireHttpsMetadata = false;
                     options.ApiSecret = "senha-super-secreta-da-api";
-                    options.ApiName = "VSSummit-Financeiro";
+                    options.ApiName = "is4-show-financeiro";
                 });
 
             services.AddPolicies();
@@ -50,8 +50,15 @@ namespace RanchoDev.Api.Financeiro
             {
                 app.UseDeveloperExceptionPage();
             }
-            app.UseCors("Devlopment");
+            app.UseCors("Development");
             app.UseAuthentication();
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("./v1/swagger.json", "ID4 API");
+                c.OAuthClientId("Swagger");
+                c.OAuthAppName("Management API");
+            });
             app.UseMvc();
         }
     }

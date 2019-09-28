@@ -17,7 +17,9 @@
             "tsConfig": "src/tsconfig.app.json",
             "polyfills": "src/polyfills.ts",
             "assets": [
-              "src/assets"
+              "src/assets",
+              "src/silent-refresh.html",
+              "src/assets/css/all.css"
             ],
             "styles": [
               "node_modules/@coreui/icons/css/coreui-icons.css",
@@ -50,6 +52,14 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ]
+            },
+            "docker": {
+                "fileReplacements": [
+                    {
+                        "replace": "src/environments/environment.ts",
+                        "with": "src/environments/environment.docker.ts"
+                    }
+                ]
             }
           }
         },

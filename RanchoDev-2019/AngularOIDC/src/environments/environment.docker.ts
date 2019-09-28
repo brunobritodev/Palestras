@@ -4,10 +4,11 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false,
-  API_URL: "http://localhost:5020/",
-  ResourceServer: "http://localhost:5020",
-  IssuerUri:  "http://localhost:5000",
-  RequireHttps: false,
-  Uri: "http://localhost:4400"
-};
+    production: false,
+    API_URL: "http://localhost:5020/",
+    ResourceServer: "http://localhost:5020",
+    IssuerUri:  "http://jpproject:5000",
+    RequireHttps: false,
+    Uri: "http://localhost:4400"
+  };
+  

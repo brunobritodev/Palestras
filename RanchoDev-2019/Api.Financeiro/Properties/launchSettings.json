@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "VSSummit.Api.Financeiro": {
+    "is4-show.Api.Financeiro": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {
