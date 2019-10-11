@@ -1,0 +1,93 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Demo</h1>
+</div>
+<div id="app">
+    <div class="row">
+        <div class="col-6">
+            <div class="card">
+
+                <h5 class="card-header">Sync Requests</h5>
+                <div class="card-header text-center">
+                    <div class="btn-group">
+                        <button class="btn btn-primary" v-on:click="callSync(threadInfo.maxWorkerThreads)">Make {{threadInfo.maxWorkerThreads}} requests</button>
+                        <button class="btn btn-outline-danger" v-on:click="callSync(threadInfo.maxWorkerThreads + 1)">Make {{threadInfo.maxWorkerThreads + 1 }} requests</button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <img src="/images/threadpoolsync-1.gif" class="card-img" alt="...">
+                        </div>
+                        <div class="col-12">
+                            <br />
+                            <span v-for="r in requests" class="badge" style="margin-right: 5px" v-bind:class="getClass(r)">{{ r.status }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img src="/images/health.png" class="card-img" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Status</h5>
+                            <p class="card-text">
+                                <dl>
+                                    <dt>Available Async I/O Threads</dt>
+                                    <dd>{{status.availableAsyncIOThreads}}</dd>
+                                    <dt>Available Worker Threads</dt>
+                                    <dd>{{status.availableWorkerThreads}}</dd>
+                                </dl>
+                                <dl class="d-lg-inline">
+                                    <dt>Max Async I/O Threads</dt>
+                                    <dd>{{threadInfo.maxAsyncIOThreads}}</dd>
+                                    <dt>Max Worker Threads</dt>
+                                    <dd>{{threadInfo.maxWorkerThreads}}</dd>
+                                </dl>
+                            </p>
+                            <p class="card-text"><small class="text-muted">Last updated: {{statusText}}</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <h5 class="card-header text-primary">Async Requests</h5>
+                <div class="card-header bg-dark">
+                    <div class="input-group col-6">
+                        <button class="btn btn-primary" v-on:click="callAsync(threadInfo.maxWorkerThreads)">Make {{threadInfo.maxAsyncIOThreads}} requests</button>
+                        <button class="btn btn-outline-success" v-on:click="callAsync(asyncCalls)">Make {{ asyncCalls }} requests</button>
+                        <input type="number" class="form-control" v-model="asyncCalls" placeholder="Async requests" />
+                    </div>
+
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-4">
+                            <img src="/images/asyncbenefits.gif" class="card-img" alt="...">
+                        </div>
+                        <div class="col-8">
+                            <span v-for="r in asyncRequests" class="badge" style="margin-right: 5px" v-bind:class="getClass(r)">{{ r.status }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts
+{
+    <script src="~/js/home.js" asp-append-version="true"></script>
+}
