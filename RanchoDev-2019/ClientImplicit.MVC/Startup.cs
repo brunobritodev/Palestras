@@ -1,7 +1,7 @@
-﻿using System.IdentityModel.Tokens.Jwt;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
+using System.IdentityModel.Tokens.Jwt;
 
 namespace ClientImplicit.MVC
 {
@@ -27,6 +27,8 @@ namespace ClientImplicit.MVC
                     options.SignInScheme = "Cookies";
                     options.ClientId = "vssummit-mvc-implicit-flow";
                     options.SaveTokens = true;
+                    options.SignedOutCallbackPath = "/Home";
+                    options.SignedOutRedirectUri = "/LoggedOut";
                 });
         }
 

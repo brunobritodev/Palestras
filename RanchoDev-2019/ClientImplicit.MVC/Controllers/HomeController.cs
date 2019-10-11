@@ -10,6 +10,11 @@ namespace ClientImplicit.MVC.Controllers
             return View();
         }
 
+        public IActionResult LoggedOut()
+        {
+            return View();
+        }
+
         [Authorize]
         public IActionResult Secure()
         {
