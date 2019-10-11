@@ -1,8 +1,8 @@
-﻿using System;
+﻿using IdentityModel.Client;
+using Newtonsoft.Json.Linq;
+using System;
 using System.Net.Http;
 using System.Threading.Tasks;
-using IdentityModel.Client;
-using Newtonsoft.Json.Linq;
 
 namespace BackgroundService.Client
 {
@@ -23,9 +23,9 @@ namespace BackgroundService.Client
             var tokenResponse = await client.RequestClientCredentialsTokenAsync(new ClientCredentialsTokenRequest
             {
                 Address = disco.TokenEndpoint,
-                ClientId = "vssummit-client-credentials-acesso-total",
+                ClientId = "is4-show-client-credentials-acesso-total",
                 ClientSecret = "super-secret",
-                Scope = "vssummit-financeiro.leitura vssummit-financeiro.escrita"
+                Scope = "is4-show-financeiro.leitura is4-show-financeiro.escrita"
             });
 
             if (tokenResponse.IsError)

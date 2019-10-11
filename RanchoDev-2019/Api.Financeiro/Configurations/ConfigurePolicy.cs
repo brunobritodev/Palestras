@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace RanchoDev.Api.Financeiro.Configurations
+namespace Api.Financeiro.Configurations
 {
     public static class ConfigurePolicy
     {
@@ -9,8 +9,8 @@ namespace RanchoDev.Api.Financeiro.Configurations
         {
             services.AddAuthorization(options =>
             {
-                options.AddPolicy("Leitura", policy => policy.RequireScope("vssummit-financeiro.leitura"));
-                options.AddPolicy("Escrita", policy => policy.RequireScope("vssummit-financeiro.escrita"));
+                options.AddPolicy("Leitura", policy => policy.RequireScope("is4-show-financeiro.leitura"));
+                options.AddPolicy("Escrita", policy => policy.RequireScope("is4-show-financeiro.escrita"));
 
             });
         }

@@ -14,16 +14,11 @@ export class LoginComponent implements OnInit, OnDestroy {
     constructor(
         private authService: AuthService,
         private router: Router) {
-
+        this.authService.runInitialLoginSequence();
     }
 
     public ngOnInit() {
-        this.stream = this.authService.canActivateProtectedRoutes$.subscribe(yes => {
-            if (yes)
-                this.router.navigate(['/home']);
-            else
-                this.authService.login('/login-callback');
-        });
+       
     }
 
     public ngOnDestroy() {

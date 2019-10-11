@@ -1,0 +1,43 @@
+﻿@model IEnumerable<ClientImplicit.MVC.Model.MoedaViewModel>
+@{
+    ViewData["Title"] = "Financeiro";
+}
+
+<h2>Financeiro</h2>
+
+<div class="row">
+    <!--/.col-->
+    <div class="col-lg-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <i class="fab fa-2x fa-bitcoin"></i> Cotação atual de moedas virtuais
+            </div>
+            <div class="panel-body" *ngIf="cotacoes != null">
+                <table class="table table-striped">
+                    <thead class="thead-light">
+                        <tr>
+                            <th>Nome</th>
+                            <th>Simbolo</th>
+                            <th>Rank</th>
+                            <th>Preco</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Nome</td>
+                                <td>@item.Simbolo</td>
+                                <td>@item.Rank</td>
+                                <td>USD @item.Preco.ToString("C") </td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!--/.col-->
+</div>

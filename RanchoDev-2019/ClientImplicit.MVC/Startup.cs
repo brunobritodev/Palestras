@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System.IdentityModel.Tokens.Jwt;
 
@@ -7,6 +8,13 @@ namespace ClientImplicit.MVC
 {
     public class Startup
     {
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+
+        public IConfiguration Configuration { get; set; }
+
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
@@ -21,11 +29,20 @@ namespace ClientImplicit.MVC
                 .AddCookie("Cookies")
                 .AddOpenIdConnect("oidc", options =>
                 {
-                    options.Authority = "http://localhost:5000";
+                    options.Authority = Configuration["ApplicationSettings:Authority"];
                     options.RequireHttpsMetadata = false;
                     options.ClientSecret = "super-mvc-secret";
                     options.SignInScheme = "Cookies";
-                    options.ClientId = "vssummit-mvc-implicit-flow";
+                    options.ClientId = "is4-show-mvc-implicit-flow";
+                    options.Scope.Add("is4-show-financeiro.leitura");
+                    options.Scope.Add("is4-show-financeiro.escrita");
+                    options.ResponseType = "code id_token";
+
+                    options.SaveTokens = true;
+                    options.GetClaimsFromUserInfoEndpoint = true;
+
+                    options.Scope.Add("offline_access");
+
                     options.SaveTokens = true;
                     options.SignedOutCallbackPath = "/Home";
                     options.SignedOutRedirectUri = "/LoggedOut";
