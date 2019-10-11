@@ -44,6 +44,8 @@ namespace ClientImplicit.MVC
                     options.Scope.Add("offline_access");
 
                     options.SaveTokens = true;
+                    options.SignedOutCallbackPath = "/Home";
+                    options.SignedOutRedirectUri = "/LoggedOut";
                 });
         }
 
