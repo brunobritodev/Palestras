@@ -24,10 +24,11 @@ namespace Api.Financeiro.Configurations
                 options.AddSecurityDefinition("oauth2", new OAuth2Scheme
                 {
                     Flow = "implicit",
-                    AuthorizationUrl = $"{configuration.GetValue<string>("ApplicationSettings:Authority")}/connect/authorize",
+                    AuthorizationUrl = $"//sso.teste.work/connect/authorize",
                     Scopes = new Dictionary<string, string> {
                         { "is4-show-financeiro.leitura", "Ler cotações" },
                         { "is4-show-financeiro.escrita", "Fazer atualizações" },
+                        { "invida_api", "Teste" },
                     }
                 });
                 options.OperationFilter<AuthorizeCheckOperationFilter>();

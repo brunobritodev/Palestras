@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.29326.143
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCore.AsyncRequests", "AspNetCore.AsyncRequests\AspNetCore.AsyncRequests.csproj", "{1873BC52-3894-47D7-9A9C-B16EE1C617C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BenchmarkAsync", "BenchmarkAsync\BenchmarkAsync.csproj", "{02B500C8-DA15-4D76-862A-CE23F4ED7DCB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BenchmarkAsync", "BenchmarkAsync\BenchmarkAsync.csproj", "{02B500C8-DA15-4D76-862A-CE23F4ED7DCB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Teste", "Teste\Teste.csproj", "{98648D54-5DC3-48FF-88DB-A92B6AA809CB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{02B500C8-DA15-4D76-862A-CE23F4ED7DCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02B500C8-DA15-4D76-862A-CE23F4ED7DCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02B500C8-DA15-4D76-862A-CE23F4ED7DCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98648D54-5DC3-48FF-88DB-A92B6AA809CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98648D54-5DC3-48FF-88DB-A92B6AA809CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98648D54-5DC3-48FF-88DB-A92B6AA809CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98648D54-5DC3-48FF-88DB-A92B6AA809CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
