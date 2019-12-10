@@ -34,10 +34,10 @@ namespace Api.Financeiro
             services.AddAuthentication("Bearer")
                 .AddIdentityServerAuthentication(options =>
                 {
-                    options.Authority = Configuration["ApplicationSettings:Authority"]; ;
+                    options.Authority = "http://localhost:5000"; ;
                     options.RequireHttpsMetadata = false;
-                    options.ApiSecret = "senha-super-secreta-da-api";
-                    options.ApiName = "is4-show-financeiro";
+                    options.ApiSecret = "Q&tGrEQMypEk.XxPU:%bWDZMdpZeJiyMwpLv4F7d**w9x:7KuJ#fy,E8KPHpKz++";
+                    options.ApiName = "jp_api";
                 });
 
             services.AddPolicies();

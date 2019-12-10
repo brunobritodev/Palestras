@@ -24,10 +24,10 @@ namespace Api.Financeiro.Configurations
                 options.AddSecurityDefinition("oauth2", new OAuth2Scheme
                 {
                     Flow = "implicit",
-                    AuthorizationUrl = $"{configuration.GetValue<string>("ApplicationSettings:Authority")}/connect/authorize",
+                    AuthorizationUrl = $"http://localhost:5000/connect/authorize",
                     Scopes = new Dictionary<string, string> {
-                        { "is4-show-financeiro.leitura", "Ler cotações" },
-                        { "is4-show-financeiro.escrita", "Fazer atualizações" },
+                        {"jp_api.user", "User Management API - full access"},
+                        {"jp_api.is4", "IS4 Management API - full access"},
                     }
                 });
                 options.OperationFilter<AuthorizeCheckOperationFilter>();
