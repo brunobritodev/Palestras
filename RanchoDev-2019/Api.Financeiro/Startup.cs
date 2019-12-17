@@ -34,10 +34,10 @@ namespace Api.Financeiro
             services.AddAuthentication("Bearer")
                 .AddIdentityServerAuthentication(options =>
                 {
-                    options.Authority = "http://localhost:5000"; ;
+                    options.Authority = "http://sso.teste.work"; //Configuration["ApplicationSettings:Authority"]; ;
                     options.RequireHttpsMetadata = false;
-                    options.ApiSecret = "Q&tGrEQMypEk.XxPU:%bWDZMdpZeJiyMwpLv4F7d**w9x:7KuJ#fy,E8KPHpKz++";
-                    options.ApiName = "jp_api";
+                    options.ApiName = "invida_api";
+                    options.ApiSecret = "*gvwK,34pTR)8*Nr-tWnVd9+nV}:sT=@9=b-k&.FxN*?GX}ob&9hvk@q84vXXE*_";
                 });
 
             services.AddPolicies();
@@ -56,7 +56,7 @@ namespace Api.Financeiro
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("./v1/swagger.json", "ID4 API");
-                c.OAuthClientId("Swagger");
+                c.OAuthClientId("invida-swagger");
                 c.OAuthAppName("Management API");
             });
             app.UseMvc();

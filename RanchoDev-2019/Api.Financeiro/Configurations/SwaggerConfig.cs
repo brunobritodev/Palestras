@@ -24,10 +24,11 @@ namespace Api.Financeiro.Configurations
                 options.AddSecurityDefinition("oauth2", new OAuth2Scheme
                 {
                     Flow = "implicit",
-                    AuthorizationUrl = $"http://localhost:5000/connect/authorize",
+                    AuthorizationUrl = $"//sso.teste.work/connect/authorize",
                     Scopes = new Dictionary<string, string> {
-                        {"jp_api.user", "User Management API - full access"},
-                        {"jp_api.is4", "IS4 Management API - full access"},
+                        { "is4-show-financeiro.leitura", "Ler cotações" },
+                        { "is4-show-financeiro.escrita", "Fazer atualizações" },
+                        { "invida_api", "Teste" },
                     }
                 });
                 options.OperationFilter<AuthorizeCheckOperationFilter>();
