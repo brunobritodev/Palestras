@@ -34,7 +34,7 @@ namespace Api.Financeiro
             services.AddAuthentication("Bearer")
                 .AddIdentityServerAuthentication(options =>
                 {
-                    options.Authority = "http://sso.teste.work"; //Configuration["ApplicationSettings:Authority"]; ;
+                    options.Authority = Configuration["ApplicationSettings:Authority"]; ;
                     options.RequireHttpsMetadata = false;
                     options.ApiName = "invida_api";
                     options.ApiSecret = "*gvwK,34pTR)8*Nr-tWnVd9+nV}:sT=@9=b-k&.FxN*?GX}ob&9hvk@q84vXXE*_";
