@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -20,13 +21,12 @@ namespace ApiOperacional
         {
             services.AddControllers();
             services.AddSwagger();
-            services.AddAuthentication("Bearer").AddJwtBearer("Bearer", o =>
-            {
-                o.Authority = "http://localhost:5000";
-                o.RequireHttpsMetadata = false;
-
-                o.Audience = "api_operacional";
-            });
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(o =>
+           {
+               o.Authority = "https://sso.hml.digital-segurosunimed.com";
+               o.Audience = "api-saude";
+           });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
