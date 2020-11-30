@@ -1,19 +1,17 @@
 
-# ASP.NET Core - RESTFul.API Example
+# ASP.NET Core - RESTFul.API
 
 <img width="300px" src="https://brunobrito.ghost.io/content/images/2020/01/capa-redes-sociais-8.png" />
 
-An ASP.NET Core API follwing good practices for a RESTFul api.
+Essa apresentação foi feita no VSSummit 2020. Essa é uma aplicação ASP.NET Core API 3.1
 
 
 Pre reqs
 
 * ASP.NET Core 3.1
 
-# How to run
+# Como rodar
 
-1. Clone this repo
-2. Open Project
-3. Build and Run
-
-More about on [ASP.NET Core - API RESTFul](https://www.brunobrito.net.br/aspnet-core-api-restful) - Portuguese only
+1. Clonar esse repositório
+2. Abrir a pasta do projeto
+3. executar: dotnet run
